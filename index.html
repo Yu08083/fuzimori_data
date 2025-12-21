@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         :root {
             --bg-body: #0a0a0a;
             --bg-card: #141414;
@@ -61,7 +65,6 @@
             border-radius: 4px;
             padding: 15px;
             font-size: 14px;
-            box-sizing: border-box;
             resize: vertical;
             outline: none;
             transition: border-color 0.3s;
@@ -91,6 +94,7 @@
 
         .input-group label {
             width: 80px;
+            min-width: 80px;
             font-weight: bold;
             color: var(--text-sub);
             font-size: 14px;
@@ -98,6 +102,7 @@
 
         .input-group input {
             flex: 1;
+            width: 100%;
             background-color: var(--bg-input);
             border: 1px solid var(--border);
             color: var(--text-main);
@@ -237,6 +242,47 @@
             font-size: 24px;
         }
 
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .header-area {
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            .app-title {
+                font-size: 24px;
+            }
+
+            .settings-grid {
+                padding: 15px;
+            }
+
+            .input-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .input-group label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -246,7 +292,7 @@
         <h1 class="app-title">+ PERION // WEB</h1>
     </div>
 
-    <textarea id="inputText" placeholder="Hyperionで出力した式を貼り付けてください"></textarea>
+    <textarea id="inputText" placeholder="Hyperionで出力した式を貼り付けてください。"></textarea>
 
     <div class="settings-grid">
         <div class="input-group">
